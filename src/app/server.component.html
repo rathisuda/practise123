@@ -1,0 +1,14 @@
+<input type="text" [(ngModel)]="serverName" /><br />
+<input type="button" value="createServer" (click)="createServer()" /><br />
+<h5 *ngIf="serverCreated; else noServer">{{ serverStatus }}</h5>
+<ng-template #noServer>
+  <h5>No Server was created</h5>
+</ng-template>
+<p
+  [ngStyle]="{ backgroundColor: getColor() }"
+  [ngClass]="{online: serverStatus === 'online'}"
+  *ngFor="let server of servers"
+>
+  Server Id is {{serverId}}. Server status is {{serverStatus}}.Server Name is
+  {{server}}
+</p>

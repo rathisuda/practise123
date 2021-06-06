@@ -1,0 +1,13 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)<br /></p>
+<button class="btn btn-primary" (click)="onToggleDetails()">
+  Display Details
+</button>
+<p *ngIf="showDetails">Secret password : rathi</p>
+<div
+  *ngFor="let logitem of log; let i = index"
+  [ngStyle]="{backgroundColor:i >=4 ? 'blue':'transparent'}"
+  [ngClass]="{'white-text' :i >= 4}"
+>
+  Display has been clicked {{logitem}} and the index of the same is {{i}}
+</div>
